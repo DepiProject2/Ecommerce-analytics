@@ -1,60 +1,53 @@
 # Olist E-Commerce Analytics
 
-**DEPI Professional Data Analytics Capstone**
+## Project Name
+Olist E-Commerce Analytics (DEPI Professional Data Analytics Capstone)
 
-End-to-end analysis of ~100K orders from the Brazilian marketplace **Olist** (Sep 2016 - Oct 2018): data cleaning and EDA in **Python**, a **star schema** and KPI queries in **SQL Server**, and an interactive **Power BI** dashboard.
+## Project Idea
+An end-to-end data analytics project on the Olist Brazilian e-commerce dataset (about 100,000 orders between 2016 and 2018, spread over 8 related tables). The team profiles and cleans the data with Python (pandas), models it in SQL Server, and delivers a Power BI dashboard that answers business questions about sales, delivery performance and customer satisfaction.
 
-## Team
-| Member | Role |
-|---|---|
-| Karim | SQL Server: database, star schema, KPI views |
-| Asmaa | Python: data cleaning, EDA, cohort retention |
-| Ahmed Anany | Power BI dashboard and DAX measures |
-| Mohamed Ali | Analytical questions, RFM analysis, final report |
+## Team Members
+1. Karim Mostafa Metwaly
+2. Asma Hosni
+3. Ahmed Mohamed Anany
+4. Ahmed Ali Amin
+5. Mohamed Ali Mabrouk
 
-## Business questions
-1. How do sales and revenue evolve, and which categories and states drive them?
-2. How reliable is delivery, and how does it affect customer satisfaction?
-3. How many customers come back (cohort retention, RFM)?
+## Roles & Responsibilities
+| Member | Role | Responsibilities |
+|--------|------|------------------|
+| Karim Mostafa Metwaly | SQL and Python | SQL Server database, schema, keys and relationships; data cleaning in Python  |
+| Asma Hosni | Python | Data profiling and data cleaning in Python (pandas) |
+| Ahmed Mohamed Anany | Power BI | Business measures (DAX) and dashboard |
+| Ahmed Ali Amin | [] | [] |
+| Mohamed Ali Mabrouk | [] | [] |
 
-## Tools
-Python (pandas, matplotlib/seaborn, Jupyter) | SQL Server + SSMS | Power BI Desktop
+## Work Plan
+- [x] Set up the shared Google Drive and upload the raw data
+- [x] Data profiling (data types, null counts, unique values)
+- [x] Data dictionary with data types, keys and relationships
+- [x] SQL Server database and schema with primary and foreign keys
+- [x] Data cleaning in Python, with automatic checks (row counts, keys, relationships)
+- [ ] Finalize the cleaning documentation (decisions and reasons)
+- [ ] Hand over the clean data to the Power BI stage
+- [ ] Build business measures and the dashboard
+- [ ] Final review and presentation
 
-## Dataset
-[Olist Brazilian E-Commerce Public Dataset (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) - 9 CSV files: customers, orders, order_items, order_payments, order_reviews, products, sellers, geolocation, product_category_name_translation.
+## KPIs
+- Total Sales (revenue)
+- Number of Orders
+- Average Order Value
+- Average Delivery Time (days)
+- On-time Delivery Rate
+- Average Review Score
+- Repeat Customer Rate
 
-## Repository structure
-```
-notebooks/      Python: cleaning, EDA, cohort retention
-sql_scripts/    star_schema_olist.sql + KPI views
-dashboard/      Power BI file (.pbix) and screenshots
-docs/           ERD, data dictionary, documentation, presentation
-data/           (raw CSVs are not committed - download from Kaggle)
-```
+## Instructor
+[Abdelrahman Ashour]
 
-## How to run
-1. Download the 9 CSV files from Kaggle into `data/raw/`.
-2. Run the notebooks in `notebooks/` in order (cleaning -> EDA -> cohort). Cleaned files are saved to `data/clean/`.
-3. In SQL Server create a database `OlistDB`, run `sql_scripts/star_schema_olist.sql`, then load the cleaned data into the dimension and fact tables.
-4. Open the `.pbix` file in Power BI Desktop and point the data source to your `OlistDB`.
+## Project Files
+- `Ecommerce_analytics_1.ipynb`: Python notebook for data profiling and data cleaning (in this repository)
+- Raw data, cleaned data and documentation (Data Dictionary, cleaning decisions, data model diagram): [Google Drive link]
 
-## Data model (star schema)
-3 fact tables - `FactOrderItems`, `FactPayments`, `FactReviews` - and 5 dimensions - `DimDate`, `DimCustomer`, `DimProduct`, `DimSeller`, `DimGeolocation`. See `docs/erd_olist.png`.
-
-Key decisions: canceled orders are excluded from KPIs; revenue = sum of item `price` (freight excluded); the real customer is `customer_unique_id`; payments and reviews are separate facts to avoid duplicating revenue.
-
-## Key results
-| KPI | Value |
-|---|---|
-| Revenue (excl. canceled) | $13.50M |
-| Valid orders | 98,205 |
-| Average order value | $137.4 |
-| Average delivery time | 12.1 days |
-| Late deliveries | 8.1% |
-| Average review score | 4.09 / 5 (late orders: 2.57, on time: 4.29) |
-| Customers with 2+ orders | 3.1% |
-
-Top categories: health_beauty, watches_gifts, bed_bath_table. Sao Paulo = 38% of revenue.
-
-## Documentation and presentation
-See the `docs/` folder: project documentation, ERD, data dictionary, presentation PDF and demo video link.
+## Data Source
+Brazilian E-Commerce Public Dataset by Olist (8 CSV files: orders, order items, payments, reviews, customers, sellers, products, product category translation).
