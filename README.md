@@ -8,7 +8,7 @@ An end-to-end data analytics project on the Olist Brazilian e-commerce dataset (
 
 ## Team Members
 1. Karim Mostafa Metwaly
-2. Asma Hosni
+2. Asmaa Mohsen Hosni
 3. Ahmed Mohamed Anany
 4. Ahmed Ali Amin
 5. Mohamed Ali Mabrouk
@@ -17,7 +17,7 @@ An end-to-end data analytics project on the Olist Brazilian e-commerce dataset (
 | Member | Role | Responsibilities |
 |--------|------|------------------|
 | Karim Mostafa Metwaly | SQL and Python | SQL Server database, schema, keys and relationships; data cleaning in Python  |
-| Asma Hosni | Python | Data profiling and data cleaning in Python (pandas) |
+| Asmaa Mohsen Hosni | Python | Data profiling and data cleaning in Python (pandas) |
 | Ahmed Mohamed Anany | Power BI | Business measures (DAX) and dashboard |
 | Ahmed Ali Amin | [] | [] |
 | Mohamed Ali Mabrouk | [] | [] |
